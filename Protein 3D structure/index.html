@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test1</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link 
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+            rel="stylesheet" 
+            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+            crossorigin="anonymous"
+    >
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <button id="show-button">View 3D Structure</button>
+    <div id="content">
+        <div id="header">
+            <p>3D Structure</p>
+            <div class="symbols">
+                <i class="fa fa-expand" id="expand-icon"></i>
+                <i class="fa fa-minus-circle"></i>
+                <i class="fa fa-times-circle"></i>
+            </div>
+        </div>
+        <div id="exp">
+            <p>2efj: 3D structure of p53 DNA-binding domain.</p>
+            <p>Chain A: cellular tumor antigen p53</p>
+        </div>
+        <div id="pdb-container">
+            <div id="pdb"></div>
+        </div>
+        <div class="infobox">
+                <span class="infobox-text">
+                    how to zoom/pan/rotate?
+                </span>
+                <div id="tooltip">
+                    <i class="fa fa-info-circle"></i>
+                    <span id="tooltipText">
+                        <span>Zoom in/out: Press and hold the SHIFT key and the left mouse button, and then move the mouse backward/forward.</span><br>
+                        <span>Pan: Press and hold the CTRL key, click and hold the left mouse button, and then move the mouse in the desired direction.</span><br>
+                        <span>Rotate: Press and hold the left mouse button, and then move the mouse in the desired direction to rotate along the x and y axes.</span>
+                    </span>
+                </div>
+            </span>
+        </div>
+        <div class="divider"></div>
+        <div class="container-fluid">
+            <div class="row justify-content-between" id="rowHeader">
+                <div class="col">Style :</div>
+                <div class="col">Color :</div>
+            </div>
+        </div>
+        <div class="row justify-content-between" id="rowMenu">
+            <div class="col-md-6">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar-box">
+                    <div class="container-fluid">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown" id="choose-menu">
+                                <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span id="selected-style">Select style</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" id="cartoon-link" href="#">Cartoon</a></li>
+                                    <li><a class="dropdown-item" id="sphere-link" href="#">Sphere</a></li>
+                                    <li><a class="dropdown-item" id="trace-link" href="#">Trace</a></li>
+                                    <li><a class="dropdown-item" id="line-link" href="#">Line</a></li>
+                                    <li><a class="dropdown-item" id="stick-link" href="#">Stick</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-md-6">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar-box">
+                    <div class="container-fluid">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                   <span id ="selected-color">Select color</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" id="aares" href="#">Amino Residue</a></li>
+                                    <li><a class="dropdown-item" id="ss-helix" href="#">Secondary structure (alpha helix)</a></li>
+                                    <li><a class="dropdown-item" id="ss-sheet" href="#">Secondary structure (beta sheet)</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" 
+    crossorigin="anonymous">
+    </script>
+    <script src="./index.js"></script>
+</body>      
+</html>

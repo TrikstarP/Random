@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#content{
+    display: none;
+    right: 0;
+    left: 0;
+    border: 1px solid #ddd;
+    width: 480px;
+    height: 610px;
+    position: absolute;
+    background-color: #fff;
+    box-sizing: content-box;
+    transition: height 0.5s;
+}
+
+#header {
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    width: 100%;
+    height: 40px;
+}
+
+#header p {
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.symbols {
+    margin-right: 5px;
+}
+
+.fa {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+#content.expanded {
+    width: 780px;
+    height: 960px;
+}
+
+#exp {
+    text-align: left;
+    margin-left: 15px;
+    width: 400px;
+    padding: 0;
+    transition: display 0.5s;
+}
+
+#exp p:not(:last-child) {
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+#exp p:last-child {
+    margin-bottom: 10px;
+}
+
+#pdb-container {
+    margin-left: 15px;
+    width: 450px;
+    height: 350px;
+    border: 1px solid #ddd;
+    margin-top: 15px;
+    position: relative;
+    transition: width 0.5s, height 0.5s;
+}
+
+#pdb {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 77.68%; /* (435 / 560) * 100 */
+    position: relative;
+}
+
+#pdb-container.expanded {
+    width: 750px;
+    height: 700px;
+}
+
+.infobox {
+    padding-top: 10px;
+    text-align: left;
+    display: block;
+}
+
+.infobox.hidden {
+    display: none;
+}
+
+.infobox-text {
+    padding-left: 15px;
+}
+
+#tooltip {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+#tooltipText {
+    display: inline-block;
+    position: fixed;
+    background-color: #fff;
+    padding: 10px;
+    white-space: nowrap;
+    border: 1px solid #000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+#tooltipText::before {
+    content: "";
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+#tooltip:hover #tooltipText {
+    visibility: visible;
+    opacity: 1;
+}
+
+.divider {
+    box-sizing: content-box;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    width: relative;
+    margin-top: 10px;
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
+    font-weight: 400;
+    clear: both;
+    white-space: nowrap;
+}
+
+.navbar-nav .nav-item .nav-link {
+    white-space: nowrap; /* Prevents wrapping */
+    overflow: hidden; /* Hides the overflowed text */
+    text-overflow: ellipsis; /* Displays an ellipsis (...) to indicate overflow */
+    max-width: 228px;
+}
