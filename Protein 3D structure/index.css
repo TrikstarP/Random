@@ -2,17 +2,14 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#content{
-    display: none;
-    right: 0;
+#content {
+    border: 1px solid #000;
     left: 0;
-    border: 1px solid #ddd;
+    display: none;
+    position: absolute; /* draggable */
     width: 480px;
     height: 610px;
-    position: absolute;
     background-color: #fff;
-    box-sizing: content-box;
-    transition: height 0.5s;
 }
 
 #header {
@@ -41,36 +38,31 @@ body {
     cursor: pointer;
 }
 
-#content.expanded {
-    width: 780px;
-    height: 960px;
-}
-
-#exp {
+#description_text {
     text-align: left;
     margin-left: 15px;
     width: 400px;
     padding: 0;
-    transition: display 0.5s;
 }
 
-#exp p:not(:last-child) {
+#description_text p:not(:last-child) { /* first paragraph */
     margin-top: 15px;
     margin-bottom: 0px;
 }
 
-#exp p:last-child {
+#description_text p:last-child { /* last paragraph */
     margin-bottom: 10px;
 }
 
 #pdb-container {
     margin-left: 15px;
+    margin-right: 15px;
     width: 450px;
     height: 350px;
     border: 1px solid #ddd;
     margin-top: 15px;
     position: relative;
-    transition: width 0.5s, height 0.5s;
+    /* transition: width 0.5s, height 0.5s; */
 }
 
 #pdb {
@@ -80,19 +72,10 @@ body {
     position: relative;
 }
 
-#pdb-container.expanded {
-    width: 750px;
-    height: 700px;
-}
-
 .infobox {
     padding-top: 10px;
     text-align: left;
     display: block;
-}
-
-.infobox.hidden {
-    display: none;
 }
 
 .infobox-text {
@@ -103,6 +86,10 @@ body {
     display: inline-block;
     position: relative;
     cursor: pointer;
+}
+
+.fa-info-circle {
+    display: inline-block;
 }
 
 #tooltipText {
@@ -135,20 +122,4 @@ body {
     position: relative;
     width: relative;
     margin-top: 10px;
-}
-
-.dropdown-item {
-    display: block;
-    width: 100%;
-    padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
-    font-weight: 400;
-    clear: both;
-    white-space: nowrap;
-}
-
-.navbar-nav .nav-item .nav-link {
-    white-space: nowrap; /* Prevents wrapping */
-    overflow: hidden; /* Hides the overflowed text */
-    text-overflow: ellipsis; /* Displays an ellipsis (...) to indicate overflow */
-    max-width: 228px;
 }
