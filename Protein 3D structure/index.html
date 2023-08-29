@@ -4,44 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test1</title>
-    <link rel="stylesheet" href="./index.css">
+    <title>jquery</title>
+    <link rel="stylesheet" href="../css/new1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link 
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
             rel="stylesheet" 
             integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
             crossorigin="anonymous"
     >
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
     <style>
     </style>
 </head>
 <body>
+    <h1>Insert Gene Names</h1>
+    <input type="text" id="genesName" placeholder="Enter Genes">
     <button id="show-button">View 3D Structure</button>
     <div id="content">
-        <div id="header">
+        <div id="header"> <!--draggable header-->
             <p>3D Structure</p>
-            <div class="symbols">
-                <i class="fa fa-expand" id="expand-icon"></i>
-                <i class="fa fa-minus-circle"></i>
-                <i class="fa fa-times-circle"></i>
+            <div class="symbols"> <!--symbols-->
+                <i class="fa fa-expand"></i>   <!--expand icon-->
+                <i class="fa fa-minus-circle"></i>  <!--minimize icon-->
+                <i class="fa fa-times-circle"></i>  <!--close icon-->
             </div>
         </div>
-        <div id="exp">
+        <div id="description_text">
             <p>2efj: 3D structure of p53 DNA-binding domain.</p>
             <p>Chain A: cellular tumor antigen p53</p>
         </div>
-        <div id="pdb-container">
+        <div id="pdb-container"> <!--Protein 3D structure window-->
             <div id="pdb"></div>
         </div>
         <div class="infobox">
                 <span class="infobox-text">
                     how to zoom/pan/rotate?
                 </span>
-                <div id="tooltip">
-                    <i class="fa fa-info-circle"></i>
+                <div id="tooltip"> <!--Hover to show text-->
+                    <i class="fa fa-info-circle"></i> <!--info icon-->
                     <span id="tooltipText">
                         <span>Zoom in/out: Press and hold the SHIFT key and the left mouse button, and then move the mouse backward/forward.</span><br>
                         <span>Pan: Press and hold the CTRL key, click and hold the left mouse button, and then move the mouse in the desired direction.</span><br>
@@ -51,7 +55,7 @@
             </span>
         </div>
         <div class="divider"></div>
-        <div class="container-fluid">
+        <div class="container-fluid"> <!--Protein structure style & color-->
             <div class="row justify-content-between" id="rowHeader">
                 <div class="col">Style :</div>
                 <div class="col">Color :</div>
@@ -88,8 +92,6 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" id="aares" href="#">Amino Residue</a></li>
-                                    <li><a class="dropdown-item" id="ss-helix" href="#">Secondary structure (alpha helix)</a></li>
-                                    <li><a class="dropdown-item" id="ss-sheet" href="#">Secondary structure (beta sheet)</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -103,6 +105,6 @@
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" 
     crossorigin="anonymous">
     </script>
-    <script src="./index.js"></script>
+    <script src="../jquery/new1.js"></script>
 </body>      
 </html>
